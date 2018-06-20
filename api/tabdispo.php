@@ -5,7 +5,9 @@ include 'inc/func.php';
 
 $today=date("Y-m-d");
 
-$result = req("SELECT jeux.num_jeu, jeux.nom_jeu, jeux.nom_categorie, categorie.nom_surcat FROM jeux INNER JOIN categorie ON jeux.nom_categorie=categorie.nom_categorie LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL OR '$today' >= prets.date_retour ORDER BY categorie.nom_surcat DESC");
+//$result = req("SELECT jeux.num_jeu FROM jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL;");
+
+$result = req("SELECT jeux.num_jeu, jeux.ref_jeu FROM jeux as jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL OR '$today' >= prets.date_retour ORDER BY num_jeu DESC");
 
 $outp = res2json_only($result);
 
