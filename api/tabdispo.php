@@ -7,7 +7,7 @@ $today=date("Y-m-d");
 
 //$result = req("SELECT jeux.num_jeu FROM jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL;");
 
-$result = req("SELECT jeux.num_jeu, jeux.ref_jeu FROM jeux as jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL OR '$today' >= prets.date_retour ORDER BY num_jeu DESC");
+$result = req("SELECT jeux.num_jeu,jeux.ref_jeu,nom_jeu FROM jeux as jeux LEFT JOIN prets ON jeux.num_jeu = prets.num_jeu WHERE prets.num_jeu IS NULL OR '$today' >= prets.date_retour ORDER BY num_jeu DESC");
 
 $outp = res2json_only($result);
 

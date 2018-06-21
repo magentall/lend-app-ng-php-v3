@@ -36,6 +36,8 @@ export class PretComponent implements OnInit {
     const target = event.target
     const jeu = target.querySelector('#seljeu').value
     const adh = target.querySelector('#seladh').value
+    alert(adh)
+    alert(jeu)
     const date_pret = target.querySelector('#date_pret').value
     const date_retour = target.querySelector('#date_retour').value
     const prix = target.querySelector('#selprix').value

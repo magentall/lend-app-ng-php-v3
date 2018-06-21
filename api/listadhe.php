@@ -4,7 +4,7 @@ include 'inc/req.php';
 include 'inc/func.php';
 
 
-$result = req("select id_adh from adherents");
+$result = req("select adh.id_adh,noms_adherent,num_adherent from adherents as adh");
 
 $outp = res2json_only($result);
 

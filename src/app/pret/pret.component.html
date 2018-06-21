@@ -7,14 +7,14 @@
       <label for="seljeu">Jeu</label>
       <select class="custom-select custom-select-sm" id="seljeu">
         <option selected>Choix</option>
-        <option  *ngFor= "let jeu of tabjeudispo; let myInd = index;">{{jeu.ref_jeu}}</option>
+        <option  *ngFor= "let jeu of tabjeudispo; let myInd = index;" value="{{jeu.num_jeu}}">{{jeu.ref_jeu}} - {{jeu.nom_jeu}}</option>
       </select>
     </div>
     <div class="col-md-6 mb-3">
       <label for="seladh">Adhérent</label>
       <select class="custom-select custom-select-sm" id="seladh">
         <option selected>Choix</option>
-        <option  *ngFor= "let adhe of tabadhe; let myInd = index;">{{adhe.id_adh}}</option>
+        <option  *ngFor= "let adhe of tabadhe; let myInd = index;" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
       </select>
     </div>
   </div>
