@@ -13,15 +13,15 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Référence</th>
       <th scope="col">Nom du Jeu</th>
       <th scope="col">Date de retour</th>
       <th scope="col">nom(s) adhérent</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let recz of tabprets; let myInd = index">
-      <th scope="row">{{myInd + 1}}</th>
+    <tr *ngFor= "let recz of tabprets">
+      <th scope="row">{{recz.ref_jeu}}</th>
       <td>{{recz.nom_jeu}}</td>
       <td>{{recz.date_retour}} (Année Mois Jour)</td>
       <td>{{recz.noms_adherent}}</td>

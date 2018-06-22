@@ -8,23 +8,23 @@
   </div>
   <select class="custom-select" id="inputGroupSelect03">
     <option selected>Choix...</option>
-    <option  *ngFor= "let cat of tabcat; let myInd = index;" >{{cat.code_cat}}</option>
+    <option  *ngFor= "let cat of tabcat; let myInd = index;" >{{cat.code_cat}} - {{cat.nom_categorie}}</option>
   </select>
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped"> <!--datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"-->
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Ref</th>
-      <th scope="col">Num</th>
+      <th scope="col">Référence</th>
+      <th scope="col">Nom du jeu</th>
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor= "let recz of rec; let myInd = index; let firstRecord = first; let lastRecord = last; let evenRecord = even; let oddRecord = odd;" [ngClass]="{odd: oddRecord, even: evenRecord, first: firstRecord, last: lastRecord}">
-      <th scope="row">{{myInd + 1}}</th>
-      <td>{{recz.ref_jeu}}</td>
-      <td>{{recz.num_jeu}}</td>
+      <th scope="row">{{recz.ref_jeu}}</th>
+      <td>{{recz.nom_jeu}}</td>
+
     </tr>
   </tbody>
 </table>
