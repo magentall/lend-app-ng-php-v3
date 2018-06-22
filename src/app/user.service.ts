@@ -59,8 +59,8 @@ export class UserService {
     return this.http.get<myData2>('/api/listprets.php')
   }
 
-  ajoutAdherent(alias,pswd,noms) {
-    return this.http.post<ok>('/api/addad.php', {alias,pswd,noms})
+  ajoutAdherent(id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent) {
+    return this.http.post<ok>('/api/addad.php', {id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent})
   }
 
   getListCat() {
