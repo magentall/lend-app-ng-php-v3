@@ -45,10 +45,9 @@ export class DataComponent implements OnInit {
     event.preventDefault()
     const target = event.target
     const categorie = target.querySelector('#selcat').value
-    alert(categorie)
-    this.rec = [];
     this.myFirstService.getDataCat(categorie).subscribe(data =>{
-          this.rec = data.obj
+        if(data)
+          {this.rec = data.obj}
         })
   }
 }
