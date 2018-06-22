@@ -1,18 +1,22 @@
 <div class="col-12">
 <p>Jeux Disponibles</p>
 
-
+<form (submit)="catchoose($event)">
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary" type="button">Catégorie</button>
+    <button type="submit" class="btn btn-outline-secondary">Catégorie</button>
   </div>
-  <select class="custom-select" id="inputGroupSelect03">
+  <select class="custom-select" id="selcat">
     <option selected>Choix...</option>
-    <option  *ngFor= "let cat of tabcat; let myInd = index;" >{{cat.code_cat}} - {{cat.nom_categorie}}</option>
+    <option  *ngFor= "let cat of tabcat" value="{{cat.code_cat}}">{{cat.code_cat}} - {{cat.nom_categorie}}</option>
   </select>
 </div>
-
-<table class="table table-striped"> <!--datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"-->
+<!--
+<ul>
+    <li *ngFor="let x of rec">{{x.ref_jeu}}, {{x.nom_jeu}}</li>
+</ul>
+-->
+<table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Référence</th>
@@ -21,12 +25,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let recz of rec; let myInd = index; let firstRecord = first; let lastRecord = last; let evenRecord = even; let oddRecord = odd;" [ngClass]="{odd: oddRecord, even: evenRecord, first: firstRecord, last: lastRecord}">
+    <tr *ngFor= "let recz of rec">
       <th scope="row">{{recz.ref_jeu}}</th>
       <td>{{recz.nom_jeu}}</td>
 
     </tr>
   </tbody>
 </table>
-
+</form>
 </div>

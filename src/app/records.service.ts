@@ -19,6 +19,10 @@ export class RecordsService {
 	   return this.http.get<myData>('api/tabdispo.php')
   }
 
+  getDataCat(categorie) {
+	   return this.http.post<myData>('api/tabdispocat.php',{categorie})
+  }
+
   getListAdhe() {
     return this.http.get<myData>('api/listadhe.php')
   }

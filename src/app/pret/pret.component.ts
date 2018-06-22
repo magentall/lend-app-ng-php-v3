@@ -46,10 +46,12 @@ export class PretComponent implements OnInit {
 
       if(data.success){
         alert(data.message)
+        location.reload()
       } else {
       window.alert(data.message)
       }
       })
+
 
   }
 
