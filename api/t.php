@@ -1,65 +1,42 @@
 <?php
-include 'inc/headjson.php';
-include 'inc/req.php';
-/*include 'inc/func.php';
+$Date = "2010-09-17";
+//echo date('Y-m-d', strtotime($Date. ' + 1 days'));
+//echo date('Y-m-d', strtotime($Date. ' + 21 days'));
 
-$conn = new mysqli("localhost", "root", "BoomBoom11**", "ctdje");
-$result = $conn->prepare('select id_adh,alias,noms_adherent from adherents as adh');
-$result = $conn->execute();
-$result->bind_result($title);
+$today=date("Y-m-d");
+$timepret=date('Y-m-d', strtotime($today. ' + 21 days'));
 
-//$outp = res2json_only($result);
 
-mysqli_fetch_all($result,MYSQLI_ASSOC);
+//echo $timepret;
 
-echo json_encode($result);
-/*while($row = $result->fetch_assoc()) {
-  $row_array['id_adh'] = $row['id_adh'];
-  $row_array['alias'] = $row['alias'];
-  $row_array['noms_adherent'] = $row['noms_adherent'];
-
-array_push($return_arr,$row_array);
-
-}
-
-echo json_encode($return_arr);*/
-
-//$tabjson = json_encode($rows);
-
-//echo($outp);
+var_dump($today>$timepret);
 /*
+$datetime1 = new DateTime('2009-10-11');
+$datetime2 = new DateTime('2009-10-13');
+$interval = $datetime1->diff($datetime2);
 
-$con=mysqli_connect("localhost", "root", "BoomBoom11**", "ctdje");
-// Check connection
-if (mysqli_connect_errno())
- {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- }
+echo $interval->format('%R%a days');
 
-$sql="SELECT code_cat from categorie;";
-$result=mysqli_query($con,$sql);
+$date1 = new DateTime("now");
+$date2 = new DateTime("tomorrow");
 
-// Fetch all
-mysqli_fetch_all($result,MYSQLI_BOTH);
+var_dump($date1 == $date2);
+var_dump($date1 < $date2);
+var_dump($date1 > $date2);
 
-echo json_encode($result);
-// Free result set
-mysqli_free_result($result);
 
-mysqli_close($con);*/
+$val1 = '2014-03-18 10:34:09.939';
+$val2 = '2014-03-18 10:34:09.940';
 
-$dsn = "mysql:host=localhost;dbname=[ctdje]";
-$username = "[root]";
-$password = "[BoomBoom11**]";
+$datetime1 = new DateTime($val1);
+$datetime2 = new DateTime($val2);
+echo "<pre>";
+var_dump($datetime1->diff($datetime2));
 
-$pdo = new PDO($dsn, $username, $password);
-
-$rows = array();
-
-    $stmt = $pdo->prepare("SELECT nom_categorie FROM categorie");
-    $stmt->execute(array('nom_categorie');
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-echo json_encode($rows);
+if($datetime1 > $datetime2)
+  echo "1 is bigger";
+else
+  echo "2 is bigger";
+*/
 
 ?>
