@@ -14,7 +14,10 @@ export class DashComponent implements OnInit {
   constructor(private user: UserService) { }
 
   ngOnInit() {
-    this.user.getListPrets().subscribe(data2 => {
+    const date_start = ''
+    const date_end = ''
+
+    this.user.getListPrets(date_start,date_end).subscribe(data2 => {
       this.tabprets = data2.obj
       //console.log(this.tabprets[0].prix)
 

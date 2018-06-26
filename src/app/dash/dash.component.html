@@ -4,14 +4,17 @@
 <div class="row">
 <div class="col-6">
 <app-pret></app-pret>
---
 <app-supmodif></app-supmodif>
 </div>
 <div class="col-6">
   <app-adherent></app-adherent>
 </div>
+<div class="col-12">
+  <app-jeu></app-jeu>
 </div>
-<h3 class="mt-5">(Par Defaut) Depuis le mois dernier au mois suivant :: Total compta : {{total}}</h3>
+</div>
+<h3 class="mt-5">:: Total compta : {{total}} euros</h3>
+<h5>(Par Defaut) Depuis le mois dernier au mois suivant (2 mois)</h5>
 <form (submit)="affprets($event)">
   <div class="form-row">
     <div class="col-md-6 mb-3">

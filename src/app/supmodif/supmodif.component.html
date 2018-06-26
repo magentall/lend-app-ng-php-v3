@@ -1,3 +1,40 @@
-<p>
-  supmodif works!
-</p>
+<h3 class="mt-4">
+  Ajouter un adhérent pour le web</h3>
+<form (submit)="addpsd($event)">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="seladh">Adhérent</label>
+      <select class="custom-select custom-select-sm" id="seladh">
+        <option selected>Choix</option>
+        <option  *ngFor= "let adhe of tabadhe; let myInd = index;" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="alias">E-mail</label>
+      <input type="text" class="form-control" id="alias" placeholder="....@...">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="passwordadd">Password</label>
+      <input type="text" class="form-control" id="passwordadd" placeholder="Password">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Mettre à jour</button>
+</form>
+<h3 class="mt-4">
+  Mettre à jour l'état du jeu</h3>
+<form (submit)="alterjeu($event)">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="seljeu">Jeu</label>
+        <select class="custom-select custom-select-sm" id="seljeu">
+          <option selected>Choix</option>
+          <option  *ngFor= "let adhe of tabadhe; let myInd = index;" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" id="code" placeholder="état du jeu">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Mettre à jour</button>
+</form>

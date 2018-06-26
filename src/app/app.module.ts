@@ -21,7 +21,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { DashComponent } from './dash/dash.component';
 import { AdherentComponent } from './adherent/adherent.component';
 import { PretComponent } from './pret/pret.component';
-import { SupmodifComponent } from './supmodif/supmodif.component'
+import { SupmodifComponent } from './supmodif/supmodif.component';
+import { JeuComponent } from './jeu/jeu.component'
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SupmodifComponent } from './supmodif/supmodif.component'
     DashComponent,
     AdherentComponent,
     PretComponent,
-    SupmodifComponent
+    SupmodifComponent,
+    JeuComponent
   ],
   imports: [
     BrowserModule,

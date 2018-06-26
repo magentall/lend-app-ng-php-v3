@@ -1,0 +1,46 @@
+<h3 class="mt-4">
+  Ajouter un jeu</h3>
+  <form (submit)="addpsd($event)">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="ref_jeu">Référence</label>
+        <input type="text" class="form-control" id="ref_jeu" placeholder="référence">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="nom_jeu">Nom du jeu</label>
+        <input type="text" class="form-control" id="nom_jeu" placeholder="nom">
+      </div>
+      <div class="col-md-2">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" id="code" placeholder="état du jeu">
+      </div>
+      <div class="col-md-4">
+        <label for="coop">Coop</label>
+        <input type="text" class="form-control" id="coop" placeholder="coop">
+      </div>
+      <div class="col-md-3">
+        <label for="selcat">Catégorie</label>
+        <select class="custom-select custom-select-sm" id="selcat">
+          <option selected>Choix</option>
+          <option  *ngFor= "let adhe of tabadhe; let myInd = index;" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="px_ach">Prix achat</label>
+        <input type="text" class="form-control" id="px_ach" placeholder="Prix d'achat">
+      </div>
+      <div class="col-md-2">
+        <label for="date_ach">Date achat</label>
+        <input type="text" class="form-control" id="code" placeholder="Date d'achat">
+      </div>
+      <div class="col-md-2">
+        <label for="date_rec">Date entrée</label>
+        <input type="text" class="form-control" id="date_rec" placeholder="Date d'enregistrement">
+      </div>
+      <div class="col-md-3">
+        <label for="prov">Provenance</label>
+        <input type="text" class="form-control" id="prov" placeholder="Provenance">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Ajouter</button>
+</form>
