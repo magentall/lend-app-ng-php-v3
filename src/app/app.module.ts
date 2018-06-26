@@ -20,7 +20,8 @@ import { UserService } from './user.service';
 import { LogoutComponent } from './logout/logout.component';
 import { DashComponent } from './dash/dash.component';
 import { AdherentComponent } from './adherent/adherent.component';
-import { PretComponent } from './pret/pret.component'
+import { PretComponent } from './pret/pret.component';
+import { SupmodifComponent } from './supmodif/supmodif.component'
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PretComponent } from './pret/pret.component'
     LogoutComponent,
     DashComponent,
     AdherentComponent,
-    PretComponent
+    PretComponent,
+    SupmodifComponent
   ],
   imports: [
     BrowserModule,

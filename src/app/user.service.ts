@@ -55,8 +55,8 @@ export class UserService {
     return this.http.get<logoutStatus>('/api/logout.php')
   }
 
-  getListPrets() {
-    return this.http.get<myData2>('/api/listprets.php')
+  getListPrets(date_start,date_end) {
+    return this.http.post<myData2>('/api/listprets.php', {date_start,date_end})
   }
 
   ajoutAdherent(id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent) {

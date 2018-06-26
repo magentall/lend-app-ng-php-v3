@@ -4,12 +4,27 @@
 <div class="row">
 <div class="col-6">
 <app-pret></app-pret>
+--
+<app-supmodif></app-supmodif>
 </div>
 <div class="col-6">
   <app-adherent></app-adherent>
 </div>
 </div>
-<h3 class="mt-5">Depuis le mois dernier au mois suivant</h3>
+<h3 class="mt-5">(Par Defaut) Depuis le mois dernier au mois suivant :: Total compta : {{total}}</h3>
+<form (submit)="affprets($event)">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="date_start">date Début</label>
+      <input type="date" class="form-control" id="date_start">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="date_end">date Fin</label>
+      <input type="date" class="form-control" id="date_end">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Afficher</button>
+</form>
 <table class="table table-striped">
   <thead>
     <tr>
