@@ -30,7 +30,7 @@ export class AdherentComponent implements OnInit {
     const alias = target.querySelector('#alias').value
     const pswd = target.querySelector('#passwordadd').value
     const noms_adherent = target.querySelector('#noms_adherent').value
-    console.log(id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent)
+    //console.log(id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent)
     this.User.ajoutAdherent(id_adh,prenoms_responsables,prenoms_enfants,date_adh,type_adh,code_postal,ville,num_tel,num_portable,adresse,alias,pswd,noms_adherent).subscribe(data => {
 
       if(data.success){

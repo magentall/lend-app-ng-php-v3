@@ -1,6 +1,6 @@
 <h3 class="mt-4">
   Ajouter un jeu</h3>
-  <form (submit)="addpsd($event)">
+  <form (submit)="addjeu($event)">
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="ref_jeu">Référence</label>
@@ -22,7 +22,7 @@
         <label for="selcat">Catégorie</label>
         <select class="custom-select custom-select-sm" id="selcat">
           <option selected>Choix</option>
-          <option  *ngFor= "let adhe of tabadhe; let myInd = index;" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
+          <option  *ngFor= "let cat of tabcat" value="{{cat.code_cat}}">{{cat.code_cat}} - {{cat.nom_categorie}}</option>
         </select>
       </div>
       <div class="col-md-2">

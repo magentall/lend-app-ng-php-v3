@@ -70,4 +70,8 @@ export class UserService {
   getListSurCat() {
     return this.http.get<myData2>('/api/surcat.php')
   }
+
+  ajoutJeu(ref_jeu,nom_jeu,code,coop,selcat,px_ach,date_ach,date_rec,prov,date_inv,regle_jeu,pieces_rech,date_res,remarq){
+    return this.http.post<ok>('/api/addjeu.php', {ref_jeu,nom_jeu,code,coop,selcat,px_ach,date_ach,date_rec,prov,date_inv,regle_jeu,pieces_rech,date_res,remarq})
+  }
 }
