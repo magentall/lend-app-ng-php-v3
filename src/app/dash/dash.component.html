@@ -40,6 +40,7 @@
         <tr>
           <th scope="col">Référence</th>
           <th scope="col">Nom du Jeu</th>
+          <th scope="col">Date de prêt</th>
           <th scope="col">Date de retour</th>
           <th scope="col">nom(s) adhérent</th>
           <th scope="col">Prix</th>
@@ -49,6 +50,7 @@
         <tr *ngFor= "let recz of tabprets">
           <th scope="row">{{recz.ref_jeu}}</th>
           <td>{{recz.nom_jeu}}</td>
+          <td>{{recz.date_pret}} (Année Mois Jour)</td>
           <td>{{recz.date_retour}} (Année Mois Jour)</td>
           <td>{{recz.noms_adherent}}</td>
           <td>{{recz.prix}}</td>
