@@ -9,7 +9,8 @@ import { UserService } from '../user.service'
 export class DashComponent implements OnInit {
 
   tabprets = []
-  total = 0;
+  total = 0
+  totalspe = 0
 
   constructor(private user: UserService) { }
 
@@ -27,8 +28,12 @@ export class DashComponent implements OnInit {
           // how to add each price and get a total
           var parse = parseFloat(element.prix)
           this.total += parse
+          if (parse==0)
+          {
+            this.totalspe++
+          }
         }
-        //console.log(this.total)
+
       if(!data2.success){
         localStorage.removeItem('loggedIn')
       }
@@ -47,13 +52,19 @@ export class DashComponent implements OnInit {
 
     this.user.getListPrets(date_start,date_end).subscribe(data1 => {
       this.tabprets = data1.obj
-      this.total = 0;
+      this.total = 0
+      this.totalspe = 0
       for (var i = 0; i < this.tabprets.length; i++) {
           var element = this.tabprets[i]
-          //console.log(element.prix)
+
           // how to add each price and get a total
           var parse = parseFloat(element.prix)
           this.total += parse
+          if (parse==0)
+          {
+            this.totalspe++
+          }
+
         }
 
       })

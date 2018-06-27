@@ -55,6 +55,14 @@ export class RecordsService {
     return this.http.post<ok>('/api/supret.php', {num_pret})
   }
 
+  addPrix(prix) {
+    return this.http.post<ok>('/api/addprix.php', {prix})
+  }
+
+  supPrix(prix) {
+    return this.http.post<ok>('/api/suprix.php', {prix})
+  }
+
 }
 
 /*

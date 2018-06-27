@@ -12,6 +12,7 @@ export class SupmodifComponent implements OnInit {
   tabadhe = []
   tabjeu = []
   tabpret = []
+  tabprix = []
 
   constructor(private records: RecordsService) { }
 
@@ -27,6 +28,10 @@ export class SupmodifComponent implements OnInit {
 
     this.records.getListPrets().subscribe(data =>{
           this.tabpret = data.obj
+        })
+
+    this.records.getListPrix().subscribe(data =>{
+          this.tabprix = data.obj
         })
 
   }
@@ -81,5 +86,44 @@ export class SupmodifComponent implements OnInit {
       }
       })
   }
+
+  addprix(event){
+    event.preventDefault()
+    const target = event.target
+    const prix = target.querySelector('#prix').value
+
+      if (isNaN(prix))
+      {
+        alert("Veuillez entrer un nombre")
+      }
+      else{
+        this.records.addPrix(prix).subscribe(data => {
+
+            if(data.success){
+              alert(data.message)
+              location.reload()
+            } else {
+              window.alert(data.message)
+            }
+          })
+      }
+    }
+
+  suprix(event){
+    event.preventDefault()
+    const target = event.target
+    const prix = target.querySelector('#selprix').value
+
+    this.records.supPrix(prix).subscribe(data => {
+
+      if(data.success){
+        alert(data.message)
+        location.reload()
+      } else {
+      window.alert(data.message)
+      }
+      })
+  }
+
 
 }

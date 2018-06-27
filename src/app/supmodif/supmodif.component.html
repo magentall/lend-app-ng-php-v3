@@ -52,3 +52,33 @@
     </div>
     <button class="btn btn-primary" type="submit">Supprimer</button>
 </form>
+
+<div class="row">
+  <div class="col-6">
+    <h3 class="mt-4">
+      Ajouter un prix</h3>
+      <form (submit)="addprix($event)">
+        <div class="col-12">
+          <label for="prix">Prix</label>
+          <input type="text" class="form-control" id="prix" placeholder="prix">
+        </div>
+        <button class="btn btn-primary" type="submit">Ajouter Prix</button>
+      </form>
+  </div>
+  <div class="col-6">
+    <h3 class="mt-4">
+      Supprimer un prix</h3>
+      <form (submit)="suprix($event)">
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <label for="selprix">Selectionnez un prix</label>
+              <select class="custom-select custom-select-sm" id="selprix">
+                <option selected value="none">Choix</option>
+                <option  *ngFor= "let prix of tabprix" value="{{prix.prix}}">{{prix.prix}}</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Supprimer</button>
+      </form>
+  </div>
+</div>
