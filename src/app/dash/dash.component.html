@@ -1,6 +1,78 @@
 <h2>
   DashBoard  <a routerLink="/logout">Logout</a>
 </h2>
+
+<div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a href="#listprets" class="nav-link active" role="tab" data-toggle="tab">Liste</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="#addpret" class="nav-link" role="tab" data-toggle="tab">Ajouter</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="#modif" class="nav-link" role="tab" data-toggle="tab">Modifier</a>
+  </li>
+</ul>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="listprets">
+    <h3 class="mt-5">:: Total compta : {{total}} euros</h3>
+    <h5>(Par Defaut) Depuis le mois dernier au mois suivant (2 mois)</h5>
+    <form (submit)="affprets($event)">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="date_start">date Début</label>
+          <input type="date" class="form-control" id="date_start">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="date_end">date Fin</label>
+          <input type="date" class="form-control" id="date_end">
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Afficher</button>
+    </form>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Référence</th>
+          <th scope="col">Nom du Jeu</th>
+          <th scope="col">Date de retour</th>
+          <th scope="col">nom(s) adhérent</th>
+          <th scope="col">Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let recz of tabprets">
+          <th scope="row">{{recz.ref_jeu}}</th>
+          <td>{{recz.nom_jeu}}</td>
+          <td>{{recz.date_retour}} (Année Mois Jour)</td>
+          <td>{{recz.noms_adherent}}</td>
+          <td>{{recz.prix}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="addpret">
+    <div class="row">
+      <div class="col-6">
+      <app-pret></app-pret>
+      <app-jeu></app-jeu>
+      </div>
+      <div class="col-6">
+        <app-adherent></app-adherent>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="modif">
+    <app-supmodif></app-supmodif>
+  </div>
+</div>
+
+<!--
 <div class="row">
 <div class="col-6">
 <app-pret></app-pret>
@@ -48,3 +120,4 @@
     </tr>
   </tbody>
 </table>
+-->
