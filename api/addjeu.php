@@ -39,7 +39,7 @@ if (isset($_POST)&& !empty($_POST)){
    ?>
               {
                 "success": false,
-                "message": "Erreur."
+                "message": "La référence doit être un nombre"
               }
    <?php
    }

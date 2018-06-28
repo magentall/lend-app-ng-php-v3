@@ -43,15 +43,22 @@ export class JeuComponent implements OnInit {
     const date_res = target.querySelector('#date_res').value
     const remarq = target.querySelector('#remarq').value
 
-    this.user.ajoutJeu(ref_jeu,nom_jeu,code,coop,selcat,px_ach,date_ach,date_rec,prov,date_inv,regle_jeu,pieces_rech,date_res,remarq).subscribe(data => {
+    if(ref_jeu!='' && nom_jeu!='')
+    {
+      this.user.ajoutJeu(ref_jeu,nom_jeu,code,coop,selcat,px_ach,date_ach,date_rec,prov,date_inv,regle_jeu,pieces_rech,date_res,remarq).subscribe(data => {
 
-      if(data.success){
-        alert(data.message)
-        location.reload()
-      } else {
-      window.alert(data.message)
-      }
-      })
+        if(data.success){
+          alert(data.message)
+          location.reload()
+        } else {
+        window.alert(data.message)
+        }
+        })
+    }
+    else
+    {
+      alert("Saisissez un nom de jeu et une référence")
+    }
   }
 
 }
