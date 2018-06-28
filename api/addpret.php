@@ -18,10 +18,10 @@ if (isset($_POST)&& !empty($_POST)){
     $date_pret=$today;
   }
 
-  /*if ($date_retour<=$today) {
+  if ($date_retour<$today) {
     $date_retour=date('Y-m-d', strtotime($today. ' + 21 days'));
   }
-
+/*
   if ($date_retour<=$date_retour) {
     $date_pret=$today;
     $date_retour=date('Y-m-d', strtotime($today. ' + 21 days'));
