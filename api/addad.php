@@ -36,7 +36,7 @@ if (isset($_POST)&& !empty($_POST)){
     ?>
                {
                  "success": false,
-                 "message": "Existe déjà."
+                 "message": "Existe déjà ou Alias et password incomplets"
                }
     <?php
     exit();

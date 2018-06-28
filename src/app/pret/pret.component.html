@@ -7,7 +7,7 @@
       <label for="seljeu">Jeu</label>
       <select class="custom-select custom-select-sm" id="seljeu">
         <option selected>Choix</option>
-        <option  *ngFor= "let jeu of tabjeudispo; let myInd = index;" value="{{jeu.num_jeu}}">{{jeu.ref_jeu}} - {{jeu.nom_jeu}}</option>
+        <option  *ngFor= "let jeu of tabjeudispo; let myInd = index;" value="{{jeu.num_jeu}}">{{jeu.ref_jeu}} - {{jeu.nom_jeu}} - {{jeu.code}}</option>
       </select>
     </div>
     <div class="col-md-6 mb-3">
@@ -29,12 +29,15 @@
     </div>
     <div class="col-md-4 mb-3">
       <label for="selprix">Prix</label>
+
       <select class="custom-select custom-select-sm" id="selprix">
         <option selected>Choix</option>
 <option  *ngFor= "let prix of tabprix; let myInd = index;" >{{prix.prix}}</option>
       </select>
+      <div class="desc"> 0 est le code pour l'emprunt par carte </div>
     </div>
   </div>
 
-  <button class="btn btn-primary" type="submit">Enregistrer</button>
+  <button class="btn btn-primary mb-1" type="submit">Enregistrer</button>
 </form>
+<hr class="mb-5"/>

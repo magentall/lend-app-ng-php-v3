@@ -1,43 +1,50 @@
-<h3 class="mt-4">
-  Ajouter un adhérent pour le web</h3>
-<form (submit)="addpsd($event)">
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="seladh">Adhérent</label>
-      <select class="custom-select custom-select-sm" id="seladh">
-        <option selected>Choix</option>
-        <option  *ngFor= "let adhe of tabadhe" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
-      </select>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="alias">E-mail</label>
-      <input type="text" class="form-control" id="alias" placeholder="....@...">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="passwordadd">Password</label>
-      <input type="text" class="form-control" id="passwordadd" placeholder="Password">
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Mettre à jour</button>
-</form>
-<h3 class="mt-4">
-  Mettre à jour l'état du jeu</h3>
-<form (submit)="alterjeu($event)">
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="seljeu">Jeu</label>
-        <select class="custom-select custom-select-sm" id="seljeu">
-          <option selected value="none">Choix</option>
-          <option  *ngFor= "let jeu of tabjeu" value="{{jeu.num_jeu}}">{{jeu.num_jeu}} - {{jeu.nom_jeu}}</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="code">Code</label>
-        <input type="text" class="form-control" id="code" placeholder="état du jeu">
-      </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Mettre à jour</button>
-</form>
+<div class="row">
+<div class="col-6">
+              <h3 class="mt-4">
+                Ajouter un adhérent pour le web</h3>
+              <form (submit)="addpsd($event)">
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="seladh">Adhérent</label>
+                    <select class="custom-select custom-select-sm" id="seladh">
+                      <option selected>Choix</option>
+                      <option  *ngFor= "let adhe of tabadhe" value="{{adhe.num_adherent}}">{{adhe.id_adh}} - {{adhe.noms_adherent}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="alias">E-mail</label>
+                    <input type="text" class="form-control" id="alias" placeholder="....@...">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="passwordadd">Password</label>
+                    <input type="text" class="form-control" id="passwordadd" placeholder="Password">
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Mettre à jour</button>
+              </form>
+              <hr class="mb-5"/>
+              <h3 class="mt-4">
+                Mettre à jour l'état du jeu</h3>
+              <div class="desc"> 1:5€ - 2:puzzle - 3:HS - 4:réserve - 5:perdu - 6: résa Ludo no prêt</div>
+              <form (submit)="alterjeu($event)">
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="seljeu">Jeu</label>
+                      <select class="custom-select custom-select-sm" id="seljeu">
+                        <option selected value="none">Choix</option>
+                        <option  *ngFor= "let jeu of tabjeu" value="{{jeu.num_jeu}}">{{jeu.num_jeu}} - {{jeu.nom_jeu}} - {{jeu.code}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="code">Code</label>
+                      <input type="text" class="form-control" id="code" placeholder="état du jeu">
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Mettre à jour</button>
+              </form>
+              <hr class="mb-5"/>
+</div>
+<div class="col-6">
 <h3 class="mt-4">
   Supprimer un prêt</h3>
 <form (submit)="supret($event)">
@@ -52,9 +59,11 @@
     </div>
     <button class="btn btn-primary" type="submit">Supprimer</button>
 </form>
+<hr class="mb-5"/>
 
-<div class="row">
-  <div class="col-6">
+
+
+  <div class="col-12">
     <h3 class="mt-4">
       Ajouter un prix</h3>
       <form (submit)="addprix($event)">
@@ -65,7 +74,8 @@
         <button class="btn btn-primary" type="submit">Ajouter Prix</button>
       </form>
   </div>
-  <div class="col-6">
+<hr class="mb-5"/>
+  <div class="col-12">
     <h3 class="mt-4">
       Supprimer un prix</h3>
       <form (submit)="suprix($event)">
@@ -81,4 +91,7 @@
           <button class="btn btn-primary" type="submit">Supprimer</button>
       </form>
   </div>
+
+
+</div>
 </div>

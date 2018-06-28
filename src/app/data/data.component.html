@@ -17,6 +17,7 @@
     <tr>
       <th scope="col">Référence</th>
       <th scope="col">Nom du jeu</th>
+      <th scope="col">Code</th>
 
     </tr>
   </thead>
@@ -24,6 +25,7 @@
     <tr *ngFor= "let recz of rec">
       <th scope="row">{{recz.ref_jeu}}</th>
       <td>{{recz.nom_jeu}}</td>
+      <td>{{recz.code}}</td>      
 
     </tr>
   </tbody>
