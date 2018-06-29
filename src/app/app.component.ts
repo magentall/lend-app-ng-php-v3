@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RecordsService } from './records.service'
+import { Title }     from '@angular/platform-browser'
 
 
 
@@ -65,9 +66,12 @@ export class AppComponent {
 
     rec = []
 // one constructor only
-    constructor(private myFirstService : RecordsService) {
+    constructor(private myFirstService : RecordsService,private titleService: Title) {
     //the follow not use for the record service
     //  console.log("constructor", this.aSimpleMethod(5, 2))
+
+    this.titleService.setTitle( 'La cité des Jeux' )
+
      this.myVariable = ""
       this.myDisabledValue = false
       setInterval(() => {
