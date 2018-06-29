@@ -1,13 +1,17 @@
 <div class="col-12">
 <p>Jeux Disponibles</p>
 
+<nav>
+<input class="form-control" type="text" name="search" [(ngModel)]="filter">
+</nav>
+<!--
 <div class="col-12 mb-3">
   <select class="custom-select custom-select-sm" id="seljeu">
     <option selected>Clic et écris les premières lettres du jeu recherché pour savoir si il est disponible</option>
     <option  *ngFor= "let jeu of rec">{{jeu.nom_jeu}} - {{jeu.ref_jeu}} - {{jeu.code}}</option>
   </select>
 </div>
-
+-->
 <h4> Listez les jeux par catégorie </h4>
 <form (submit)="catchoose($event)">
 <div class="input-group mb-3">
@@ -30,7 +34,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let recz of rec">
+    <tr *ngFor= "let recz of rec | filter:filter">
       <th scope="row">{{recz.ref_jeu}}</th>
       <td>{{recz.nom_jeu}}</td>
       <td>{{recz.code}}</td>

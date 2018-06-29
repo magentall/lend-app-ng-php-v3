@@ -23,6 +23,7 @@ import { AdherentComponent } from './adherent/adherent.component';
 import { PretComponent } from './pret/pret.component';
 import { SupmodifComponent } from './supmodif/supmodif.component';
 import { JeuComponent } from './jeu/jeu.component'
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { JeuComponent } from './jeu/jeu.component'
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     RouterModule.forRoot([
       {
         path:'',

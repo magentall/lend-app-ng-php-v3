@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RecordsService } from '../records.service'
 import { UserService } from '../user.service'
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { FormsModule } from '@angular/forms'
 //import { Subject } from 'rxjs/Subject'
 
 
@@ -14,6 +16,7 @@ export class DataComponent implements OnInit {
 
   rec = []
   tabcat = []
+  filter = ''
   /*dtOptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject();*/
 
