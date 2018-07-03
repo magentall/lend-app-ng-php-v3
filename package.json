@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxyconfig.json --env=prod",
+    "start": "ng serve --proxy-config proxyconfig.json --prod ",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -25,19 +25,22 @@
     "core-js": "^2.5.7",
     "jquery": "^3.3.1",
     "ng2-search-filter": "^0.4.7",
+    "node-sass": "^4.9.0",
     "npm": "^6.1.0",
     "popper.js": "^1.14.3",
     "rxjs": "^5.5.11",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.3",
+    "@angular-devkit/build-angular": "~0.6.8",
+    "@angular/cli": "^6.0.8",
     "@angular/compiler-cli": "^5.2.11",
     "@angular/language-service": "^5.2.11",
     "@types/jasmine": "^2.8.8",
     "@types/jasminewd2": "^2.0.2",
     "@types/node": "^6.0.113",
     "codelyzer": "^4.4.2",
+    "hoek": "^5.0.3",
     "jasmine-core": "^2.99.1",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "^2.0.4",
@@ -45,9 +48,11 @@
     "karma-coverage-istanbul-reporter": "^1.4.3",
     "karma-jasmine": "^1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lodash": "^4.17.10",
     "protractor": "^5.3.2",
-    "ts-node": "^4.1.0",
+    "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
+    "tunnel-agent": "^0.6.0",
     "typescript": "^2.9.2"
   }
 }

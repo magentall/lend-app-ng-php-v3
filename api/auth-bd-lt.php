@@ -23,11 +23,58 @@ if (isset($_POST)&& !empty($_POST)&&$_POST['password']!=""){
   $result = req("SELECT adherents.alias,adherents.key_ad FROM adherents WHERE adherents.alias='$username'");
 
   while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    $pswd=$rs["key_ad"];
+    $pswd=$rs['key_ad'];
   }
-  //$pswd=trim($pswd);
-  //if($username == 'admin' && $password == 'admin') {
-  if($password==$pswd){
+
+  $coef = '5BY**246f6b386f6b87jH';
+
+  $hexa ='';
+  $a=0;
+  $tab=$password;
+
+  for ($i=0; $i < strlen($tab);$i++){
+    if ($a==2) {
+      $hexa.=$tab[$i] ;
+      $a=0;
+    }
+    elseif ($a==1){
+      $a=2;
+    }
+    else{
+      $a=1;
+    }
+  }
+
+  $fp = fopen('results.txt', 'w');
+  fwrite($fp, $hexa);
+  fclose($fp);
+
+  $hex='';
+  $hex=str_replace('5BY**246f6b36f6b87jH', '', $hexa);//$password);
+  //$hex=utf8_encode($hex);
+
+  $string1='';
+  for ($i=0; $i < strlen($hex)-1; $i+=2){
+      $string1 .= chr(hexdec($hex[$i].$hex[$i+1]));
+  }
+
+//$string1=utf8_encode($string1);
+/*
+  $hex=str_replace('5BY**246f6b36f6b87jHàç', '', $password);
+  $hex=utf8_encode($hex);
+
+  $string2='';
+  for ($i=0; $i < strlen($hex)+1; $i+=4){
+      $string2 .= chr(hexdec($hex[$i].$hex[$i+1]));
+  }*/
+
+//$string2=utf8_encode($string2);
+
+
+  //echo $string;
+
+    if($string1==$pswd){
+//  if($password==$pswd){
     //$_SESSION['user'] = 'admin';
     $_SESSION['user'] = $username;
 

@@ -15,11 +15,48 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(event){
+
+
+    const coef = '5BY**246f6b36f6b87jH'
+
+
+
     event.preventDefault()
     const target = event.target
     const username = target.querySelector('#username').value
-    const password = target.querySelector('#password').value
+    var passwordd = target.querySelector('#password').value
     const capt = target.querySelector('#capt').value
+
+    var hexa = '';
+
+    var charz ="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+
+    for(var i=0;i<passwordd.length;i++) {
+      hexa += passwordd.charCodeAt(i).toString(16)
+      //hexa += 'ab'
+    }
+
+    hexa += coef
+    var psd = ''
+    for(i=0;i<hexa.length;i++){
+
+      var a = charz.substr(Math.floor(Math.random()*62),1)
+      psd+=a
+      a = charz.substr(Math.floor(Math.random()*62),1)
+      psd+=a
+      psd+=hexa[i]
+
+    }
+
+    const password = psd //hexa
+
+    //console.log(psd)
+
+    //console.log(password,username);
+
+
 
     if (capt==='b'){
 
